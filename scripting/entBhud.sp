@@ -66,7 +66,7 @@ public Plugin myinfo =
 	author = "Oylsister",
 	description = "Showing an entity health with hitmarker",
 	version = "1.0",
-	url = "https://github.com/oylsister/Zombie-Escpe-Thailand-Community"
+	url = "https://github.com/oylsister/entBhud"
 };
 
 public void OnPluginStart()
