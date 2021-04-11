@@ -88,7 +88,7 @@ public void OnPluginStart()
 	{
 		if(AreClientCookiesCached(client)) 
 			OnClientCookiesCached(client);
-    }
+	}
 
 	HookEntityOutput("func_physbox", "OnHealthChanged", OnDamage);
 	HookEntityOutput("func_physbox_multiplayer", "OnHealthChanged", OnDamage);
@@ -176,21 +176,22 @@ public int entBhudMenu_Handler(Menu menu, MenuAction action, int client, int par
 		{
 			case 0:
 			{
-            	g_bEnableBHud[client] = !g_bEnableBHud[client];
-            	CPrintToChat(client, "%t %t {lightgreen}%t{default}.", "prefix", "Toggle_BHud", g_bEnableBHud[client] ? "Enabled" : "Disabled");
-        	}
+				g_bEnableBHud[client] = !g_bEnableBHud[client];
+				CPrintToChat(client, "%t %t {lightgreen}%t{default}.", "prefix", "Toggle_BHud", g_bEnableBHud[client] ? "Enabled" : "Disabled");
+        		}
 			case 1:
 			{
-            	g_bHitmarker[client] = !g_bHitmarker[client];
-            	CPrintToChat(client, "%t %t {lightgreen}%t{default}.", "prefix", "Toggle_Hitmarker", g_bHitmarker[client] ? "Enabled" : "Disabled");
-        	}
+				g_bHitmarker[client] = !g_bHitmarker[client];
+				CPrintToChat(client, "%t %t {lightgreen}%t{default}.", "prefix", "Toggle_Hitmarker", g_bHitmarker[client] ? "Enabled" : "Disabled");
+			}
 		}
 		char sCookie[4];
 		FormatEx(sCookie, sizeof(sCookie), "%b%b", g_bEnableBHud[client], g_bHitmarker[client]);
 		SetClientCookie(client, entBhud_Cookie, sCookie);
 
 		entBhudMenu(client, 1);
-	} 
+	}
+	
 	else if(action == MenuAction_Cancel)
 		ShowCookieMenu(client);
 
