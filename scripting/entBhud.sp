@@ -357,7 +357,7 @@ public void SendBossHPMsg(int client, int entity, const char[] entityname, int h
 				if(IsClientInGame(i))
 				{
 					// check if client is human or what
-					if(ZR_IsClientHuman(i))
+					if(ZR_IsClientHuman(i) && IsPlayerAlive(i))
 					{
 						// so human hit the entity
 						iHuman++;
